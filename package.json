@@ -1,0 +1,20 @@
+{
+  "name": "password manager",
+  "version": "1.0.0",
+  "description": "generate and save password",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Innext",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.10",
+    "nodemailer": "^6.4.17"
+  }
+}
