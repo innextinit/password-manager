@@ -1,0 +1,23 @@
+{
+    "APP_NAME": "",
+    "MONGODB_URI": "",
+    "JWT_SECRET": "",
+    "BCRYPT_SALT": "",
+    "role": {
+      "ADMIN": ["admin"],
+      "USER": ["user", "admin"]
+    },
+   
+    "url": {
+      "CLIENT_URL": "",
+      "BASE_URL": ""
+    },
+    "mailer": {
+      "HOST": "",
+      "USER": "",
+      "PASSWORD": "",
+      "PORT": "",
+      "DOMAIN": ""
+    }
+  }
+  
