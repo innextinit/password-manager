@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 
-const userSchema = new Schema({
+const tokenSchema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     required: true,
@@ -19,4 +19,4 @@ const userSchema = new Schema({
 })
 
 
-module.exports = mongoose.model('token', userSchema)
+module.exports = mongoose.model('token', tokenSchema)

@@ -10,7 +10,6 @@ class generatePw{
     */
 
     static async generatePassword(req, res, next) {
-        console.log(req.body)
         try {
             let { userLength } = req.body
             let pwd = ""
@@ -22,9 +21,8 @@ class generatePw{
                     + symbol[Math.floor(Math.random()*symbol.length)].slice(-9)
             }
 
-            console.log(pwd.substring(0, userLength))
+            return res.json(pwd.substring(0, userLength))
 
-            return
         } catch (error) {
             next(error)
         }

@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "530f7c7b-ce02-459f-8f62-f3d423c799fc",
+		"name": "pass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Gloria",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "BGfhdjiu6h$%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{userURL}}/register",
+							"host": [
+								"{{userURL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@mail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "BGfhdjiu6h$%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{userURL}}/login",
+							"host": [
+								"{{userURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Adewumi Adey",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{userURL}}/",
+							"host": [
+								"{{userURL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "test@mailme.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{userURL}}/updatepassword",
+							"host": [
+								"{{userURL}}"
+							],
+							"path": [
+								"updatepassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request password reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@mail.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{userURL}}/requestpasswordreset",
+							"host": [
+								"{{userURL}}"
+							],
+							"path": [
+								"requestpasswordreset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "password",
+									"value": "thjTYJKEI654r#$%",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{userURL}}/resetpassword?userId=5fe4dcbd5c185826bf77bfe1&resetToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlcjIuY29tIiwiZmlyc3ROYW1lIjoia29sYWRlIiwiX2lkIjoiNWZmODc5Nzc2ZjcxYTYzMmVlZTIyOGQyIiwiaWF0IjoxNjEwMTE5NTQzLCJleHAiOjE2MTAxMjMxNDN9.-TG41Zf-WHccv2rO8Lir5Y5EZVXV9ZwpAR-yFMYygkM",
+							"host": [
+								"{{userURL}}"
+							],
+							"path": [
+								"resetpassword"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "5fe4dcbd5c185826bf77bfe1"
+								},
+								{
+									"key": "resetToken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlcjIuY29tIiwiZmlyc3ROYW1lIjoia29sYWRlIiwiX2lkIjoiNWZmODc5Nzc2ZjcxYTYzMmVlZTIyOGQyIiwiaWF0IjoxNjEwMTE5NTQzLCJleHAiOjE2MTAxMjMxNDN9.-TG41Zf-WHccv2rO8Lir5Y5EZVXV9ZwpAR-yFMYygkM"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{userURL}}/:id",
+							"host": [
+								"{{userURL}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5fe4dcbd5c185826bf77bfe1",
+									"description": "user to delete"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

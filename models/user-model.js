@@ -26,11 +26,7 @@ const userSchema = new Schema(
       trim: true,
       enum: ["user", "admin"],
       default: "user"
-    }// ,
-    // isVerified: {
-    //   type: Boolean,
-    //   default: false,
-    // }
+    }
   },
   {
     timestamps: true
