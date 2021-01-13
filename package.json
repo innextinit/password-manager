@@ -1,5 +1,5 @@
 {
-  "name": "password manager",
+  "name": "password-manager",
   "version": "1.0.0",
   "description": "generate and save password",
   "main": "index.js",
