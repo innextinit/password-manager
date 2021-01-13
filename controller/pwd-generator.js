@@ -15,7 +15,7 @@ class generatePw{
         try {
             let { passwordl } = req.body
             let pwd = ""
-            while( !pwd && pwd.length < passwordl ) {
+            while( !pwd || pwd.length < passwordl ) {
                 let symbol = "~!@#$%^&*()_+=-{}][|\"`';:,.<>/? "
                 pwd += String.fromCharCode(Math.floor(Math.random()*10)+48)
                     + String.fromCharCode(Math.floor(Math.random()*26)+97)
