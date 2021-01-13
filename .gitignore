@@ -2,7 +2,7 @@ node_modules
 
 # production env files
 .env
-config/env/dev.env.json
+config/env/pr*
 
 # exclude files in uploads
 uploads/*

@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-const { MONGODB_URI } = require("./index");
+const env = require("dotenv")
+env.config()
+
+const { MONGODB_URI } = process.env
 
 const options = {
      useNewUrlParser: true,

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 const bcrypt = require("bcrypt")
 const { BCRYPT_SALT } = require("../config")
 
-const savePassword = new Schema({
+const newPassword = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
         required: true,
@@ -19,7 +19,7 @@ const savePassword = new Schema({
     }
 })
 
-userSchema.pre("save", async function (next) {
+newPassword.pre("save", async function (next) {
     if (!this.isModified('savePassword')) return next()
   
     const hash = await bcrypt.hash(this.savePassword, BCRYPT_SALT)
@@ -29,4 +29,4 @@ userSchema.pre("save", async function (next) {
 })
 
 
-module.exports = mongoose.model('Password', savePassword)
+module.exports = mongoose.model('Password', newPassword)

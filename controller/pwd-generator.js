@@ -1,3 +1,5 @@
+const SavePw = require("../models/save-password-model")
+
 class generatePw{
 
     /*
@@ -11,9 +13,9 @@ class generatePw{
 
     static async generatePassword(req, res, next) {
         try {
-            let { userLength } = req.body
+            let { passwordl } = req.body
             let pwd = ""
-            while( !pwd || pwd.length < userLength ) {
+            while( !pwd || pwd.length < passwordl ) {
                 let symbol = "~!@#$%^&*()_+=-{}][|\"`';:,.<>/? "
                 pwd += String.fromCharCode(Math.floor(Math.random()*10)+48)
                     + String.fromCharCode(Math.floor(Math.random()*26)+97)
@@ -21,7 +23,31 @@ class generatePw{
                     + symbol[Math.floor(Math.random()*symbol.length)].slice(-9)
             }
 
-            return res.json(pwd.substring(0, userLength))
+            return res.json(pwd.substring(0, passwordl))
+
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async saveNewPw(req, res, next) {
+        try {
+            const user = req.user
+            const { passphase, savePassword } = req.body
+
+            const gotPassPhase = SavePw.findOne({ userId: user._id, passphase: passphase })
+
+            if (gotPassPhase) {
+                const err = new Error()
+                err.name = "Not Acceptable"
+                err.status = 406
+                err.message = "This passphase is in use"
+                throw err
+            }
+
+            await new SavePw(
+                {$set: {passphase: passphase, savePassword: savePassword} }, {new: true}
+                ).save()
 
         } catch (error) {
             next(error)

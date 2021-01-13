@@ -1,10 +1,20 @@
+const { json } = require('express')
 const express = require('express')
 const router = express.Router()
-const generatePW = require("../controller/pwd-generator")
+const generatePw = require("../controller/pwd-generator")
+
+router.get("/", (req, res) => {
+    res.json({message: `welcome page`})
+})
 
 router.post(
     "/",
-    generatePW.generatePassword
+    generatePw.generatePassword
+)
+
+router.post(
+    "/new",
+    generatePw.saveNewPw
 )
 
 module.exports = router
