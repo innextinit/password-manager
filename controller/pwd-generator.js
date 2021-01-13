@@ -15,7 +15,7 @@ class generatePw{
         try {
             let { passwordl } = req.body
             let pwd = ""
-            while( !pwd || pwd.length < passwordl ) {
+            while( !pwd && pwd.length < passwordl ) {
                 let symbol = "~!@#$%^&*()_+=-{}][|\"`';:,.<>/? "
                 pwd += String.fromCharCode(Math.floor(Math.random()*10)+48)
                     + String.fromCharCode(Math.floor(Math.random()*26)+97)
@@ -23,6 +23,7 @@ class generatePw{
                     + symbol[Math.floor(Math.random()*symbol.length)].slice(-9)
             }
             const password = await pwd.substring(0, passwordl)
+            console.log(password)
             return res.json(password)
 
         } catch (error) {
