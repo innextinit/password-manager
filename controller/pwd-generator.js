@@ -22,8 +22,8 @@ class generatePw{
                     + String.fromCharCode(Math.floor(Math.random()*26)+65)
                     + symbol[Math.floor(Math.random()*symbol.length)].slice(-9)
             }
-
-            return res.json(pwd.substring(0, passwordl))
+            const password = await pwd.substring(0, passwordl)
+            return res.json(password)
 
         } catch (error) {
             next(error)
