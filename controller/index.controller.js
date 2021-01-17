@@ -3,7 +3,7 @@ const auth = require("../middleware/auth.middleware")
 const passAuth = require("../middleware/password.middleware")
 const Token = require("../models/token-model")
 const crypto = require("crypto")
-const { url } = require("../config/index")
+const { url,  } = require("../config/index")
 
 class controller {
     static async newUser(req, res, next) {
@@ -112,6 +112,7 @@ class controller {
         const user = req.user
         try {
             let password = req.body.password
+            let newPassword = req.body.newPassword
             const isCorrect = passAuth.compareHash(password, user.password)
 
             if (!isCorrect) {
@@ -122,7 +123,7 @@ class controller {
                 throw err
             }
 
-            const hash = passAuth.hashPassword( password )
+            const hash = passAuth.hashPassword( newPassword )
 
             await User.updateOne(
                 { _id: user._id},
@@ -164,7 +165,7 @@ class controller {
                 createdAt: Date.now()
             }).save()
 
-            const link = `${url.CLIENT_URL}/resetpassword?userId=${user._id}&resetToken=${resetToken}`
+            const link = `http://${url.CLIENT_URL}/resetpassword?userId=${user._id}&resetToken=${hash}`
 
             return res.json(link)
         } catch (error) {
@@ -174,10 +175,12 @@ class controller {
 
     static async resetPassword(req, res, next) {
         try {
-            const { userId, resetToken } = req.params
+            const { userId, resetToken } = req.query
             const { password } = req.body
 
-            let user = await Token.findOne({ userId })
+            let user = await Token.findOne({ userId: userId })
+            console.log(user.token)
+            console.log(resetToken)
             if (!user) {
                 const err = new Error()
                 err.name = "Authentication Error"
@@ -205,7 +208,7 @@ class controller {
 
             await user.deleteOne()
 
-            return res.json({
+            return await res.json({
                 message: "password reset successful",
                 status: 201
             })

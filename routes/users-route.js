@@ -30,7 +30,7 @@ router.post(
   controller.requestPasswordReset
 )
 
-router.put(
+router.post(
   "/resetpassword",
   controller.resetPassword
 )

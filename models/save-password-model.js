@@ -9,9 +9,13 @@ const newPassword = new Schema({
         required: true,
         ref: "User"
     },
-    passphase: {
+    siteName: {
         type: String,
-        require: true
+        required: true
+    },
+    passphrase: {
+        type: String,
+        required: true
     },
     savePassword: {
         type: String,

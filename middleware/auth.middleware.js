@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken")
 const User = require("../models/user-model")
+const { TOKEN_KEY } = require("../config/index")
 
 class authorisation {
     static getToken(req)  {
@@ -17,7 +18,7 @@ class authorisation {
     static async decodeToken( req, res, next ) {
         const token = await authorisation.getToken(req)
         try {
-            const decoded = await jwt.verify(token, process.env.TOKEN_KEY)
+            const decoded = jwt.verify(token, TOKEN_KEY)
             const user = await User.findOne({"email": decoded.email})
             if (!user) throw Error("User Doesnt't Exist")
             if (user._id != decoded._id) throw Error("Wrong token, lier")
@@ -39,7 +40,6 @@ class authorisation {
     }
 
     static genToken( user ) {
-        const secret = process.env.TOKEN_KEY
         return jwt.sign(
             {
                 email: user.email,
@@ -47,7 +47,7 @@ class authorisation {
                 firstName: user.firstName,
                 _id: user._id
             },
-            secret,
+            TOKEN_KEY,
             {
                 expiresIn: 3600
             }

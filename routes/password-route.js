@@ -1,6 +1,6 @@
-const { json } = require('express')
 const express = require('express')
 const router = express.Router()
+const auth = require("../middleware/auth.middleware")
 const generatePw = require("../controller/pwd-generator")
 
 router.get("/", (req, res) => {
@@ -9,12 +9,13 @@ router.get("/", (req, res) => {
 
 router.post(
     "/",
-    generatePw.generatePassword
+    generatePw.generatePWInfo
 )
 
 router.post(
     "/new",
-    generatePw.saveNewPw
+    auth.decodeToken,
+    generatePw.saveNewPwInfo
 )
 
 module.exports = router

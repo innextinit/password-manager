@@ -1,8 +1,7 @@
 const mongoose = require("mongoose")
-const bcrypt = require("bcrypt")
-const { BCRYPT_SALT } = require("../config")
+// const bcrypt = require("bcrypt")
+// const { BCRYPT_SALT } = require("../config")
 const Schema = mongoose.Schema
-
 
 const userSchema = new Schema(
   {
@@ -33,6 +32,9 @@ const userSchema = new Schema(
   }
 )
 
+module.exports = mongoose.model('users', userSchema)
+
+/*
 userSchema.pre("save", async function (next) {
   if (!this.isModified('password')) return next()
 
@@ -41,7 +43,4 @@ userSchema.pre("save", async function (next) {
 
   next()
 })
-
-
-
-module.exports = mongoose.model('users', userSchema)
+*/
