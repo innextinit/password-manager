@@ -7,7 +7,7 @@ class generatePw{
     static async generatePWInfo(req, res, next) {
         try {
             let { passwordl } = req.body
-            res.json( await (await generatePw.generatePassword(passwordl)).split().reverse().join() )
+            res.json( (await generatePw.generatePassword(passwordl)) )
         } catch (error) {
             next(error)
         }
