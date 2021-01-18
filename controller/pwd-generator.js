@@ -1,14 +1,13 @@
-const SaveNewSitePw = require("../models/save-password-model")
-const passAuth = require("../middleware/password.middleware")
+const Password = require("../models/save-password-model")
 const jwt = require("jsonwebtoken")
-const { TOKEN_KEY, APP_NAME } = require("../config/index")
+const { PASSWORD_KEY, APP_NAME, url } = require("../config/index")
 
 class generatePw{
 
     static async generatePWInfo(req, res, next) {
         try {
-            let { passwordl } = req.body            
-            res.json( await generatePw.generatePassword(passwordl) )
+            let { passwordl } = req.body
+            res.json( await (await generatePw.generatePassword(passwordl)).split().reverse().join() )
         } catch (error) {
             next(error)
         }
@@ -27,7 +26,9 @@ class generatePw{
         let pwd = ""
             while( !pwd || pwd.length < value ) {
                 let symbol = "~!@#$%^&*()_+=-{}][|\"`';:,.<>/? "
-                pwd += String.fromCharCode(Math.floor(Math.random()*10)+48)
+                pwd += String.fromCharCode(Math.floor(Math.random()*26)+97)
+                    + String.fromCharCode(Math.floor(Math.random()*26)+65)
+                    +String.fromCharCode(Math.floor(Math.random()*10)+48)
                     + String.fromCharCode(Math.floor(Math.random()*26)+97)
                     + String.fromCharCode(Math.floor(Math.random()*26)+65)
                     + symbol[Math.floor(Math.random()*symbol.length)].slice(-9)
@@ -38,52 +39,56 @@ class generatePw{
 
     static async saveNewPwInfo(req, res, next) {
         try {
-            const user = req.user
-            const { passphrase, savePassword, siteName } = req.body
+            const user = req.user._id
+            const { savePassword, siteName } = req.body
 
-            // const gotpassphrase = SaveNewSitePw.find({ siteName: siteName })
-            // if (gotpassphrase) {
-            //     const err = new Error()
-            //     err.name = "Not Acceptable"
-            //     err.status = 406
-            //     err.message = "This passphrase and/or sitename is in use"
-            //     throw err
-            // }
-
-            const token = jwt.sign({
-                userId: user._id,
-                siteName: siteName,
-                savePassword: savePassword
-            }, {
-                key: TOKEN_KEY,
-                passphrase: passphrase
-            }, {
-                algorithm: "RS512",
-                noTimestamp: true,
-                issuer: APP_NAME
-            })
-
-            console.log( token )
-
-            const decode = jwt.verify(
-                token,
+            const token = jwt.sign(
                 {
-                    key: TOKEN_KEY, passphrase: passphrase
-                }, {
-                    algorithms: "RS512",
-                    ignoreExpiration: true,
-                    issuer: "Inioluwa"
+                    userId: user,
+                    siteName: siteName,
+                    savePassword: savePassword
+                }, 
+                PASSWORD_KEY,
+                {
+                    noTimestamp: true,
+                    issuer: APP_NAME
                 }
             )
 
-            console.log( decode )
+            await new Password(
+                { 
+                    userId: user,
+                    siteName: siteName,
+                    savePassword: token
+                }
+            ).save()
 
-            // const hash = passAuth.hashPassword( savePassword )
+            res.redirect(`http://${url.BASE_URL}/password/`)
 
-            // await new SaveNewSitePw(
-            //     {$set: { passphrase: passphrase, savePassword: hash, siteName: siteName } }, {new: true}
-            //     ).save()
+        } catch (error) {
+            next(error)
+        }
+    }
 
+    static async getSavePw(req, res, next) {
+        try {
+            const user = req.user
+            let data = []
+            
+            const token = await Password.find({ userId: user._id })
+
+            await token.forEach(tokenInfo => {
+                let info = jwt.verify(
+                    tokenInfo.savePassword,
+                    PASSWORD_KEY, 
+                    {
+                        ignoreExpiration: true,
+                        issuer: APP_NAME
+                    }
+                )
+                data.push({info})
+            })
+            res.json(data)
         } catch (error) {
             next(error)
         }

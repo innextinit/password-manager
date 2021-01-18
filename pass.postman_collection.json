@@ -60,7 +60,7 @@
 								},
 								{
 									"key": "password",
-									"value": "BGfhdjiu6h$%",
+									"value": "thjTYJKEI654r#$%ds2",
 									"type": "text"
 								}
 							]
@@ -87,7 +87,7 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Adewumi Adey",
+									"value": "Adewumi Adetunji",
 									"type": "text"
 								}
 							]
@@ -114,7 +114,12 @@
 							"urlencoded": [
 								{
 									"key": "password",
-									"value": "test@mailme.com",
+									"value": "BGfhdjiu6h$%",
+									"type": "text"
+								},
+								{
+									"key": "newPassword",
+									"value": "7fZ_8sY;7wJ|4",
 									"type": "text"
 								}
 							]
@@ -141,7 +146,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "test@mail.com",
+									"value": "test1@mail.com",
 									"type": "text"
 								}
 							]
@@ -161,20 +166,23 @@
 				{
 					"name": "reset password",
 					"request": {
-						"method": "PUT",
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "urlencoded",
 							"urlencoded": [
 								{
 									"key": "password",
-									"value": "thjTYJKEI654r#$%",
+									"value": "thjTYJKEI654r#$%ds2",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{userURL}}/resetpassword?userId=5fe4dcbd5c185826bf77bfe1&resetToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlcjIuY29tIiwiZmlyc3ROYW1lIjoia29sYWRlIiwiX2lkIjoiNWZmODc5Nzc2ZjcxYTYzMmVlZTIyOGQyIiwiaWF0IjoxNjEwMTE5NTQzLCJleHAiOjE2MTAxMjMxNDN9.-TG41Zf-WHccv2rO8Lir5Y5EZVXV9ZwpAR-yFMYygkM",
+							"raw": "{{userURL}}/resetpassword?userId=6005a0eacb0ef068df4c3392&resetToken=384673500fa83ece79fdda13beea231d296a27ca595800e14703d123806a4c92",
 							"host": [
 								"{{userURL}}"
 							],
@@ -184,11 +192,11 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "5fe4dcbd5c185826bf77bfe1"
+									"value": "6005a0eacb0ef068df4c3392"
 								},
 								{
 									"key": "resetToken",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAdXNlcjIuY29tIiwiZmlyc3ROYW1lIjoia29sYWRlIiwiX2lkIjoiNWZmODc5Nzc2ZjcxYTYzMmVlZTIyOGQyIiwiaWF0IjoxNjEwMTE5NTQzLCJleHAiOjE2MTAxMjMxNDN9.-TG41Zf-WHccv2rO8Lir5Y5EZVXV9ZwpAR-yFMYygkM"
+									"value": "384673500fa83ece79fdda13beea231d296a27ca595800e14703d123806a4c92"
 								}
 							]
 						}
@@ -211,7 +219,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "5fe4dcbd5c185826bf77bfe1",
+									"value": "600478bfab8fef35c855eca7",
 									"description": "user to delete"
 								}
 							]
@@ -220,6 +228,136 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "password",
+			"item": [
+				{
+					"name": "generatePw",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "passwordl",
+									"value": "15",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{passURL}}/",
+							"host": [
+								"{{passURL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSavedPw",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passURL}}/",
+							"host": [
+								"{{passURL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savePW",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "savePassword",
+									"value": "lM9lR$bJ6vK{uG4y",
+									"description": "the new password to save",
+									"type": "text"
+								},
+								{
+									"key": "siteName",
+									"value": "github",
+									"description": "the site name",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{passURL}}/new",
+							"host": [
+								"{{passURL}}"
+							],
+							"path": [
+								"new"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "welcome home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbWFpbC5jb20iLCJyb2xlIjoidXNlciIsIl9pZCI6IjYwMDU2NWVhMjRkNjE5MzFmYjRkNmE5YSIsImlhdCI6MTYxMDk4Njg2OCwiZXhwIjoxNjEwOTkwNDY4fQ.6S00G4VwI-YYUtFrK74IqP2fVdyikbysWSLS-GzCP28",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

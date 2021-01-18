@@ -3,9 +3,13 @@ const auth = require("../middleware/auth.middleware")
 const passAuth = require("../middleware/password.middleware")
 const Token = require("../models/token-model")
 const crypto = require("crypto")
-const { url,  } = require("../config/index")
+const { url, APP_NAME } = require("../config/index")
 
 class controller {
+    static async welcome(req, res) {
+        res.send(`Welcome to ${APP_NAME}, please read the readme.md file on GitHub at https://github.com/innext/password.git`)
+    }
+
     static async newUser(req, res, next) {
         let { name, password, email } = req.body
 
@@ -165,7 +169,7 @@ class controller {
                 createdAt: Date.now()
             }).save()
 
-            const link = `http://${url.CLIENT_URL}/resetpassword?userId=${user._id}&resetToken=${hash}`
+            const link = `http://${url.CLIENT_URL}/resetpassword?userId=${user._id}&resetToken=${resetToken}`
 
             return res.json(link)
         } catch (error) {
@@ -179,8 +183,7 @@ class controller {
             const { password } = req.body
 
             let user = await Token.findOne({ userId: userId })
-            console.log(user.token)
-            console.log(resetToken)
+
             if (!user) {
                 const err = new Error()
                 err.name = "Authentication Error"
@@ -190,6 +193,7 @@ class controller {
             }
 
             const isValid = passAuth.compareHash(resetToken, user.token)
+
             if (!isValid) {
                 const err = new Error()
                 err.name = "Authentication Error"
