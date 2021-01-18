@@ -61,10 +61,32 @@ Here I gave all functions present and what they do
     updatePassword | password, newPassword | update old password with new one
     requestPasswordReset | email | generates a token for password reset
     resetPassword | userId, resetToken, password | update the users password
-    delUser | logged users | delete the details of loggedin user
+    delUser | loggedin user | delete the details of loggedin user
 
 * **GeneratePw Functions**
     Name | Params | Function
     ---|---|---
     generatePWInfo | passwordl | calls the function to generate random password
-    generatePassword
+    generatePassword | length | generates password of the length given
+    saveNewPwInfo | savePassword, siteName | signs the details and save tokens detail
+    getSavePw | loggedin user | verify sign then display all saved password and site
+
+* **Authorisation Functions**
+    Name | Params | Function
+    ---|---|---
+    getToken | authorization | gets the authorization from the header
+    decodeToken | authorization | verify authorisation gotten from getToken function
+    authJSON | user | returns generated token to user with other information like role
+    genToken | user | signs users detail to generate a token
+
+* **PasswordMiddleware Function**
+    Name | Params | Function
+    ---|---|---
+    hashPassword | password | hashes a password
+    compareHash | password, userPW | compares the password claim by user with the password, userPW save to the db
+
+## Questioning
+
+Create an issue, would be more than happy to attend to it, but please give detailed explaination of the problem. Would love if suggestions can be made to the possible solution too. This would go a long way in fix fast.
+
+**You think there is a bettter and more secure way to get this done? Please use the pull request, am very open to learning.**
