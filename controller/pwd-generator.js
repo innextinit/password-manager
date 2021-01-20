@@ -64,9 +64,6 @@ class generatePw{
             ).save()
 
             res.redirect(`http://${url.BASE_URL}/password/`)
-            const password = await pwd.substring(0, passwordl)
-            console.log(password)
-            return res.json(password)
 
         } catch (error) {
             next(error)
@@ -89,9 +86,50 @@ class generatePw{
                         issuer: APP_NAME
                     }
                 )
-                data.push({info})
+
+                data.push(
+                    {
+                        _id: tokenInfo._id,
+                        password: info.savePassword,
+                        siteName: info.siteName
+                        
+                    }
+                )
             })
             res.json(data)
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async editSavePw(req, res, next) {
+        try {
+            const user = req.user._id
+            const { updateId } = req.params
+            const { savePassword, siteName } = req.body
+
+            const token = jwt.sign(
+                {
+                    userId: user,
+                    siteName: siteName,
+                    savePassword: savePassword
+                }, 
+                PASSWORD_KEY,
+                {
+                    noTimestamp: true,
+                    issuer: APP_NAME
+                }
+            )
+
+            await Password.updateOne(
+                {_id: updateId},
+                { $set: { siteName: siteName, savePassword: token } },
+                { upsert: true }
+            )
+
+            res.redirect(`http://${url.BASE_URL}/password/`)
+
+
         } catch (error) {
             next(error)
         }

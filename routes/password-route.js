@@ -20,4 +20,10 @@ router.post(
     generatePw.saveNewPwInfo
 )
 
+router.post(
+    "/:updateId",
+    auth.decodeToken,
+    generatePw.editSavePw
+)
+
 module.exports = router
