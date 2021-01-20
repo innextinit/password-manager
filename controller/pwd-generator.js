@@ -64,6 +64,9 @@ class generatePw{
             ).save()
 
             res.redirect(`http://${url.BASE_URL}/password/`)
+            const password = await pwd.substring(0, passwordl)
+            console.log(password)
+            return res.json(password)
 
         } catch (error) {
             next(error)
