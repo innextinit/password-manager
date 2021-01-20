@@ -233,6 +233,23 @@
 			"name": "password",
 			"item": [
 				{
+					"name": "getSavedPw",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{passURL}}/",
+							"host": [
+								"{{passURL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "generatePw",
 					"request": {
 						"method": "POST",
@@ -247,23 +264,6 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "{{passURL}}/",
-							"host": [
-								"{{passURL}}"
-							],
-							"path": [
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getSavedPw",
-					"request": {
-						"method": "GET",
-						"header": [],
 						"url": {
 							"raw": "{{passURL}}/",
 							"host": [
@@ -309,6 +309,44 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "editSavePw",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "savePassword",
+									"value": "aZ8lQ%tJ0hX^iB7",
+									"type": "text"
+								},
+								{
+									"key": "siteName",
+									"value": "okayokay",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{passURL}}/:updateId",
+							"host": [
+								"{{passURL}}"
+							],
+							"path": [
+								":updateId"
+							],
+							"variable": [
+								{
+									"key": "updateId",
+									"value": "6005b593fe0c317774f35585"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -335,7 +373,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbWFpbC5jb20iLCJyb2xlIjoidXNlciIsIl9pZCI6IjYwMDU2NWVhMjRkNjE5MzFmYjRkNmE5YSIsImlhdCI6MTYxMDk4Njg2OCwiZXhwIjoxNjEwOTkwNDY4fQ.6S00G4VwI-YYUtFrK74IqP2fVdyikbysWSLS-GzCP28",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbWFpbC5jb20iLCJyb2xlIjoidXNlciIsIl9pZCI6IjYwMDU2NWVhMjRkNjE5MzFmYjRkNmE5YSIsImlhdCI6MTYxMTE3NDg1MCwiZXhwIjoxNjExMTc4NDUwfQ.lHB3s7FDjtEPScTvHj634rW69EPhGIbkisQc2lky4-o",
 				"type": "string"
 			}
 		]
