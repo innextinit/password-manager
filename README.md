@@ -47,6 +47,7 @@ GET | All Saved Password | {{passURL}} | - | - | - | Yes
 POST | Generate Random Password | {{passURL}} | passwordl | - | - | No
 POST | Save Site Password | {{passURL}}/new | savePassword, siteName | - | - | No
 POST | Edit Saved Site Password | {{passURL}}/:updateId | savePassword, siteName | - | updateId | Yes
+DELETE | Delete Saved Site Details | {{passURL}}/:id | - | - | id | Yes
 
 ## Function Calls
 
@@ -72,6 +73,7 @@ Here I gave all functions present and what they do
     saveNewPwInfo | savePassword, siteName | signs the details and save tokens detail
     getSavePw | loggedin user | verify sign then display all saved password and site
     editSavePw | loggedin user, updateId (from params), savePassword, siteName | update savePw document with _id: updateId
+    deleteSavePw | logggedin user, id | deletes savePw document with id
 
 * **Authorisation Functions**
     Name | Params | Function
