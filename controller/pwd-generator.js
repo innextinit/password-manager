@@ -72,10 +72,10 @@ class generatePw{
 
     static async getSavePw(req, res, next) {
         try {
-            const user = req.user
+            const user = req.user._id
             let data = []
             
-            const token = await Password.find({ userId: user._id })
+            const token = await Password.find({ userId: user })
 
             await token.forEach(tokenInfo => {
                 let info = jwt.verify(
@@ -129,6 +129,28 @@ class generatePw{
 
             res.redirect(`http://${url.BASE_URL}/password/`)
 
+
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async deleteSavePw(req, res, next) {
+        try {
+            const user = req.user._id
+            const { id } = req.params
+            let toBeDeleted = await Password.findById(id)
+
+            if ( user ==! toBeDeleted.userId ) {
+                const err = new Error()
+                err.name = "Not Acceptable"
+                err.status = 406
+                err.message = "Could not find the User"
+                throw err
+            }
+
+            const del = await toBeDeleted.deleteOne()
+            return await res.json(del)
 
         } catch (error) {
             next(error)

@@ -18,17 +18,17 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Gloria",
+									"value": "ini",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "test@mail.com",
+									"value": "inni22121922@gmail.com",
 									"type": "text"
 								},
 								{
 									"key": "password",
-									"value": "BGfhdjiu6h$%",
+									"value": "uK6qT!dC8qR'aJ7",
 									"type": "text"
 								}
 							]
@@ -43,7 +43,83 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "ini",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "inni22121922@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "uK6qT!dC8qR'aJ7",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{userURL}}/register",
+									"host": [
+										"{{userURL}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"171-ABDJD/828COjLlbEbRA2V0UFtHE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:30:36 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 201,\n    \"message\": \"User created successfully\",\n    \"user\": {\n        \"email\": \"inni22121922@gmail.com\",\n        \"role\": \"user\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlubmkyMjEyMTkyMkBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsIl9pZCI6IjYwMDlmMjdjYTZkNTQ3MDAxN2I2MGVkYyIsImlhdCI6MTYxMTI2NDYzNiwiZXhwIjoxNjExMjY4MjM2fQ.-SIxpampVcrvhFUBl7RPpbQEFwVyb4VPVF0grbOKPns\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "login",
@@ -55,7 +131,7 @@
 							"urlencoded": [
 								{
 									"key": "email",
-									"value": "test@mail.com",
+									"value": "test1@mail.com",
 									"type": "text"
 								},
 								{
@@ -75,7 +151,70 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "test1@mail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "thjTYJKEI654r#$%ds2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{userURL}}/login",
+									"host": [
+										"{{userURL}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12b-UUWdODyAx/2H7RtDYxseAxwyZTM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:07:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"user\": {\n        \"email\": \"test1@mail.com\",\n        \"role\": \"user\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJfaWQiOiI2MDA0YTllYjcyNDU1OTVlMTBlYmI0MTQiLCJpYXQiOjE2MTEyNjMyNTcsImV4cCI6MTYxMTI2Njg1N30.o-esV4G-pyTalIiEyxL6Q8aWsbnvOSBmW9HY2sSWUfs\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "update user",
@@ -102,7 +241,65 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "update user",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Adewumi Adetunji",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{userURL}}/",
+									"host": [
+										"{{userURL}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-9CSp0YZbwVi1S/g+0CyT4pOh1+k\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:13:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"n\": 1,\n    \"nModified\": 1,\n    \"ok\": 1\n}"
+						}
+					]
 				},
 				{
 					"name": "update password",
@@ -114,7 +311,7 @@
 							"urlencoded": [
 								{
 									"key": "password",
-									"value": "BGfhdjiu6h$%",
+									"value": "thjTYJKEI654r#$%ds2",
 									"type": "text"
 								},
 								{
@@ -134,7 +331,70 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "update password",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "password",
+											"value": "thjTYJKEI654r#$%ds2",
+											"type": "text"
+										},
+										{
+											"key": "newPassword",
+											"value": "7fZ_8sY;7wJ|4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{userURL}}/updatepassword",
+									"host": [
+										"{{userURL}}"
+									],
+									"path": [
+										"updatepassword"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-BVWytgaJWr5l3kIJ/cw1NdFr5Us\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:54:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"password reset successful\",\n    \"status\": 201\n}"
+						}
+					]
 				},
 				{
 					"name": "request password reset",
@@ -161,7 +421,65 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "request password reset",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "test1@mail.com",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{userURL}}/requestpasswordreset",
+									"host": [
+										"{{userURL}}"
+									],
+									"path": [
+										"requestpasswordreset"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "151"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"97-xAhGy2ZkiiVCtBm8UYOM93fShHo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:04:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "\"http://localhost:2021/users/resetpassword?userId=6004a9eb7245595e10ebb414&resetToken=b0ebd86345f1ff83c805d7f0dffad948f339e06ce9e83a79618f932356bbb82b\""
+						}
+					]
 				},
 				{
 					"name": "reset password",
@@ -182,7 +500,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{userURL}}/resetpassword?userId=6005a0eacb0ef068df4c3392&resetToken=384673500fa83ece79fdda13beea231d296a27ca595800e14703d123806a4c92",
+							"raw": "{{userURL}}/resetpassword?userId=6004a9eb7245595e10ebb414&resetToken=5fa5120babafa8950626d50b60c921799e5836b47a044df5022a5265a41cb73b",
 							"host": [
 								"{{userURL}}"
 							],
@@ -192,16 +510,84 @@
 							"query": [
 								{
 									"key": "userId",
-									"value": "6005a0eacb0ef068df4c3392"
+									"value": "6004a9eb7245595e10ebb414"
 								},
 								{
 									"key": "resetToken",
-									"value": "384673500fa83ece79fdda13beea231d296a27ca595800e14703d123806a4c92"
+									"value": "5fa5120babafa8950626d50b60c921799e5836b47a044df5022a5265a41cb73b"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "reset password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "password",
+											"value": "thjTYJKEI654r#$%ds2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{userURL}}/resetpassword?userId=6004a9eb7245595e10ebb414&resetToken=5fa5120babafa8950626d50b60c921799e5836b47a044df5022a5265a41cb73b",
+									"host": [
+										"{{userURL}}"
+									],
+									"path": [
+										"resetpassword"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "6004a9eb7245595e10ebb414"
+										},
+										{
+											"key": "resetToken",
+											"value": "5fa5120babafa8950626d50b60c921799e5836b47a044df5022a5265a41cb73b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-BVWytgaJWr5l3kIJ/cw1NdFr5Us\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:56:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"password reset successful\",\n    \"status\": 201\n}"
+						}
+					]
 				},
 				{
 					"name": "delete user",
@@ -219,13 +605,68 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "600478bfab8fef35c855eca7",
+									"value": "6004a9eb7245595e10ebb414",
 									"description": "user to delete"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "delete user",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{userURL}}/:id",
+									"host": [
+										"{{userURL}}"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6004a9eb7245595e10ebb414",
+											"description": "user to delete"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-8yoJJsb1wmCptKDtNumcbBfLEVw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:57:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"role\": \"user\",\n    \"_id\": \"6004a9eb7245595e10ebb414\",\n    \"name\": \"Adewumi Adetunji\",\n    \"password\": \"$2b$15$NGs4TGii2WOQHjPtylgDre8neCNvn5VTTvSk6jMYWWj6psCPT2tK2\",\n    \"email\": \"test1@mail.com\",\n    \"createdAt\": \"2021-01-17T21:19:39.832Z\",\n    \"updatedAt\": \"2021-01-21T21:56:26.203Z\",\n    \"__v\": 0\n}"
+						}
+					]
 				}
 			]
 		},
@@ -247,7 +688,55 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getSavedPw",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{passURL}}/",
+									"host": [
+										"{{passURL}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-BcCLKV4J/hHP3wo7nPXfurFt1Qc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:38:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6009f38f20972f171575599c\",\n        \"password\": \"lM9lR$bJ6vK{uG4y\",\n        \"siteName\": \"github\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "generatePw",
@@ -259,7 +748,7 @@
 							"urlencoded": [
 								{
 									"key": "passwordl",
-									"value": "15",
+									"value": "20",
 									"type": "text"
 								}
 							]
@@ -274,7 +763,73 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "generatePw",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "passwordl",
+											"value": "20",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{passURL}}/",
+									"host": [
+										"{{passURL}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "Cowboy"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "22"
+								},
+								{
+									"key": "Etag",
+									"value": "W/\"16-m0+WeJXxgcaXhl6NIZ0nmrkgUvo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:28:07 GMT"
+								},
+								{
+									"key": "Via",
+									"value": "1.1 vegur"
+								}
+							],
+							"cookie": [],
+							"body": "\"uK6qT!dC8qR'aJ7dX?lY\""
+						}
+					]
 				},
 				{
 					"name": "savePW",
@@ -308,7 +863,72 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "savePW",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "savePassword",
+											"value": "lM9lR$bJ6vK{uG4y",
+											"description": "the new password to save",
+											"type": "text"
+										},
+										{
+											"key": "siteName",
+											"value": "github",
+											"description": "the site name",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{passURL}}/new",
+									"host": [
+										"{{passURL}}"
+									],
+									"path": [
+										"new"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"56-BcCLKV4J/hHP3wo7nPXfurFt1Qc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:35:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6009f38f20972f171575599c\",\n        \"password\": \"lM9lR$bJ6vK{uG4y\",\n        \"siteName\": \"github\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "editSavePw",
@@ -341,12 +961,158 @@
 							"variable": [
 								{
 									"key": "updateId",
-									"value": "6005b593fe0c317774f35585"
+									"value": "6009f7669e66ec301e419f9e"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "editSavePw",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "savePassword",
+											"value": "aZ8lQ%tJ0hX^iB7",
+											"type": "text"
+										},
+										{
+											"key": "siteName",
+											"value": "okayokay",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{passURL}}/:updateId",
+									"host": [
+										"{{passURL}}"
+									],
+									"path": [
+										":updateId"
+									],
+									"variable": [
+										{
+											"key": "updateId",
+											"value": "6009f7669e66ec301e419f9e"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-WI7rJQXCKH6tGG8feT7zNRnT6Jg\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:51:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"6009f7669e66ec301e419f9e\",\n        \"password\": \"aZ8lQ%tJ0hX^iB7\",\n        \"siteName\": \"okayokay\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "deleteSavePw",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{passURL}}/:id",
+							"host": [
+								"{{passURL}}"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6009f7289e66ec301e419f9d"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleteSavePw",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{passURL}}/:id",
+									"host": [
+										"{{passURL}}"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "6009f7289e66ec301e419f9d"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"164-nqO/v4Wl4r98hQGyTrrWyYexydI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 21 Jan 2021 21:51:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6009f7289e66ec301e419f9d\",\n    \"userId\": \"6004a9eb7245595e10ebb414\",\n    \"siteName\": \"github\",\n    \"savePassword\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDA0YTllYjcyNDU1OTVlMTBlYmI0MTQiLCJzaXRlTmFtZSI6ImdpdGh1YiIsInNhdmVQYXNzd29yZCI6ImxNOWxSJGJKNnZLe3VHNHkiLCJpc3MiOiJteS1wYXNzd29yZC1tYW5hZ2VyIn0.VLHwK6MaiL7D3fPBdwpntNbeSZGQGLSUQDbks_Io_-s\",\n    \"__v\": 0\n}"
+						}
+					]
 				}
 			]
 		},
@@ -365,7 +1131,55 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "welcome home",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "114"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"72-CuxWV2/yWPDUGoFdm7Lmpa9BZ5E\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 21 Jan 2021 21:52:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Welcome to my-password-manager, please read the readme.md file on GitHub at https://github.com/innext/password.git"
+				}
+			]
 		}
 	],
 	"auth": {
@@ -373,7 +1187,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAbWFpbC5jb20iLCJyb2xlIjoidXNlciIsIl9pZCI6IjYwMDU2NWVhMjRkNjE5MzFmYjRkNmE5YSIsImlhdCI6MTYxMTE3NDg1MCwiZXhwIjoxNjExMTc4NDUwfQ.lHB3s7FDjtEPScTvHj634rW69EPhGIbkisQc2lky4-o",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJfaWQiOiI2MDA0YTllYjcyNDU1OTVlMTBlYmI0MTQiLCJpYXQiOjE2MTEyNjMyNTcsImV4cCI6MTYxMTI2Njg1N30.o-esV4G-pyTalIiEyxL6Q8aWsbnvOSBmW9HY2sSWUfs",
 				"type": "string"
 			}
 		]

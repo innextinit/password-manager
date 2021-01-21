@@ -26,4 +26,9 @@ router.post(
     generatePw.editSavePw
 )
 
+router.delete(
+    "/:id",
+    auth.decodeToken,
+    generatePw.deleteSavePw
+)
 module.exports = router
