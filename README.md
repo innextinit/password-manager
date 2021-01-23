@@ -45,8 +45,8 @@ POST | Reset Password | {{userURL}}/resetpassword?userId={{user._id}}&resetToken
 DELETE | Delete Account | {{userURL}}/:id | - | - | id | Yes
 GET | All Saved Password | {{passURL}} | - | - | - | Yes
 POST | Generate Random Password | {{passURL}} | passwordl | - | - | No
-POST | Save Site Password | {{passURL}}/new | savePassword, siteName | - | - | No
-POST | Edit Saved Site Password | {{passURL}}/:updateId | savePassword, siteName | - | updateId | Yes
+POST | Save Site Password | {{passURL}}/new | savePassword, siteName, username | - | - | No
+POST | Edit Saved Site Password | {{passURL}}/:updateId | savePassword, siteName, username | - | updateId | Yes
 DELETE | Delete Saved Site Details | {{passURL}}/:id | - | - | id | Yes
 
 ## Function Calls
@@ -70,9 +70,9 @@ Here I gave all functions present and what they do
     ---|---|---
     generatePWInfo | passwordl | calls the function to generate random password
     generatePassword | length | generates password of the length given
-    saveNewPwInfo | savePassword, siteName | signs the details and save tokens detail
+    saveNewPwInfo | savePassword, siteName, username | signs the details and save tokens detail
     getSavePw | loggedin user | verify sign then display all saved password and site
-    editSavePw | loggedin user, updateId (from params), savePassword, siteName | update savePw document with _id: updateId
+    editSavePw | loggedin user, updateId (from params), savePassword, siteName, username | update savePw document with _id: updateId
     deleteSavePw | logggedin user, id | deletes savePw document with id
 
 * **Authorisation Functions**

@@ -40,13 +40,14 @@ class generatePw{
     static async saveNewPwInfo(req, res, next) {
         try {
             const user = req.user._id
-            const { savePassword, siteName } = req.body
+            const { savePassword, siteName, username } = req.body
 
             const token = jwt.sign(
                 {
                     userId: user,
                     siteName: siteName,
-                    savePassword: savePassword
+                    savePassword: savePassword,
+                    username: username
                 }, 
                 PASSWORD_KEY,
                 {
@@ -91,8 +92,8 @@ class generatePw{
                     {
                         _id: tokenInfo._id,
                         password: info.savePassword,
-                        siteName: info.siteName
-                        
+                        siteName: info.siteName,
+                        username: info.username
                     }
                 )
             })
@@ -106,13 +107,14 @@ class generatePw{
         try {
             const user = req.user._id
             const { updateId } = req.params
-            const { savePassword, siteName } = req.body
+            const { savePassword, siteName, username } = req.body
 
             const token = jwt.sign(
                 {
                     userId: user,
                     siteName: siteName,
-                    savePassword: savePassword
+                    savePassword: savePassword,
+                    username: username
                 }, 
                 PASSWORD_KEY,
                 {
