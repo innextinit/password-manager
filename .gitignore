@@ -7,3 +7,4 @@ config/env/pr*
 # exclude files in uploads
 uploads/*
 !uploads/.gitkeep
+openpgpjs
