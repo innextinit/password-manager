@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken")
 const { PASSWORD_KEY, APP_NAME, url } = require("../config/index")
 
 class generatePw{
-
     static async generatePWInfo(req, res, next) {
         try {
             let { passwordl } = req.body

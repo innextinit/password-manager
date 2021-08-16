@@ -606,6 +606,7 @@
 								{
 									"key": "id",
 									"value": "6004a9eb7245595e10ebb414",
+									"type": "string",
 									"description": "user to delete"
 								}
 							]
@@ -972,7 +973,8 @@
 							"variable": [
 								{
 									"key": "updateId",
-									"value": "600c9fdf64ce9b10de9073b2"
+									"value": "600c9fdf64ce9b10de9073b2",
+									"type": "string"
 								}
 							]
 						}
@@ -1064,7 +1066,8 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "6009f7289e66ec301e419f9d"
+									"value": "6009f7289e66ec301e419f9d",
+									"type": "string"
 								}
 							]
 						}
@@ -1198,7 +1201,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJfaWQiOiI2MDA1YTBlYWNiMGVmMDY4ZGY0YzMzOTIiLCJpYXQiOjE2MTE0Mzk5NjUsImV4cCI6MTYxMTQ0MzU2NX0.U8z_tPccMhe9fg7iKdIUsampOyIg2JxE_P2b3IjreBY",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQG1haWwuY29tIiwicm9sZSI6InVzZXIiLCJfaWQiOiI2MDA1YTBlYWNiMGVmMDY4ZGY0YzMzOTIiLCJpYXQiOjE2MjkxNTI0NzgsImV4cCI6MTYyOTE1NjA3OH0.uRL56RGc7yFEIhthJAgO_HQ8jB0KHPt2yaLSrS7F9VE",
 				"type": "string"
 			}
 		]
